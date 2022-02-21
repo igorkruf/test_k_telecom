@@ -9,7 +9,7 @@ const app = express();
 // parse application/json
 app.use(bodyParser.json());
 
-app.get("/get_types_equipment", (req, res) => {
+app.get("/api/get_types_equipment", (req, res) => {
   console.log("Запрос списка типов оборудования");
   const connection = mysql
     .createConnection({
@@ -39,7 +39,7 @@ app.get("/get_types_equipment", (req, res) => {
   });
 });
 
-app.post("/equipment", (req, res) => {
+app.post("/api/equipment", (req, res) => {
   console.log("Запрос добавления оборудования");
 
   console.log(req.body);
@@ -72,7 +72,7 @@ app.post("/equipment", (req, res) => {
   });
 });
 //Получение списка оборудования
-app.get("/equipment", (req, res) => {
+app.get("/api/equipment", (req, res) => {
   console.log("Запрос списка оборудования");
   const connection = mysql
     .createConnection({
@@ -102,7 +102,7 @@ app.get("/equipment", (req, res) => {
   });
 });
 //Получение оборудования по его id
-app.get("/equipment/:id", (req, res) => {
+app.get("/api/equipment/:id", (req, res) => {
   console.log("Запрос на выбор оборудования по его id оборудования");
   console.log(req.params);
   const ideq = [req.params.id];
@@ -135,7 +135,7 @@ app.get("/equipment/:id", (req, res) => {
   });
 });
 
-app.delete("/equipment/:id", (req, res) => {
+app.delete("/api/equipment/:id", (req, res) => {
   console.log("Запрос на удаление оборудования");
   console.log(req.params);
   const ideq = [req.params.id];
@@ -171,7 +171,7 @@ app.delete("/equipment/:id", (req, res) => {
 });
 
 //Изменение оборудования по его id
-app.put("/equipment/:id", (req, res) => {
+app.put("/api/equipment/:id", (req, res) => {
   console.log("Запрос на изменение оборудования по его id ");
   console.log(req.params);
   console.log(req.body);

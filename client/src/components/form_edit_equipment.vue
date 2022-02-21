@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-center width_100">
     <div class="content q-gutter-y-md">
-      {{ selected_equipment }}
+      <!-- {{ selected_equipment }} -->
       <!--{{ types_equipment }} -->
 
       <q-select
