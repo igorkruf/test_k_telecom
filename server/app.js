@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const express = require("express");
 var bodyParser = require("body-parser");
 const mysql = require("mysql2");
